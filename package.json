@@ -1,0 +1,33 @@
+{
+  "name": "genpass",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^8.4.1",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^2.2.19",
+    "vite": "^2.6.4",
+    "vite-plugin-compression": "^0.3.6"
+  },
+  "repository": {
+    "type": "Dzaky Abdurrahman",
+    "url": "https://mhm-dzaky.me/Showcase/Genpass"
+  },
+  "author": "Dzaky Abdurrahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "none"
+  },
+  "homepage": "mhm-dzaky.me",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

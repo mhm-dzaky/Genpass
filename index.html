@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genpass | Generate strong password in a secc!</title>
+    <meta
+      name="description"
+      content="Tired of being hacked and scammed by people who stole your account because you have a weak password? genpass give you strong password to keep your stuff secret even your neighbor won't gonna know!"
+    />
+  </head>
+  <body>
+    <div class="layout min-h-screen flex items-center justify-center">
+      <main>
+        <section>
+          <h1 class="text-center">Genpass</h1>
+          <p class="text-center my-2 md:my-4">Generate strong password in a secc.</p>
+        </section>
+
+        <section class="my-4 md:my-8 w-full">
+          <h3 class="mb-1 md:mb-2">Feel Free to Customize</h3>
+
+          <div class="flex items-end w-full space-x-2 md:space-x-4">
+            <div class="w-full">
+              <label for="password-length" class="text-xs md:text-sm">Character Length</label>
+              <input
+                type="number"
+                id="password-length"
+                value="8"
+                min="1"
+                max="128"
+                class="block w-full h-8 md:h-10 mt-1 md:mt-2"
+              />
+            </div>
+
+            <button class="btn bg-pink-500 text-white hover:bg-pink-600" id="password-generate">
+              <span class="sr-only">Generate password</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex items-center justify-center space-x-2 md:space-x-4 mt-2 md:mt-4">
+            <!-- list of checkbox of variants at least one should checked -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+              <input type="checkbox" id="lower" value="lower" checked class="variant md:w-5 md:h-5 cursor-pointer" />
+              <label for="lower" class="cursor-pointer select-none">Lower</label>
+            </div>
+
+            <!-- upper case -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+              <input type="checkbox" id="upper" value="upper" class="variant md:w-5 md:h-5 cursor-pointer" />
+              <label for="upper" class="cursor-pointer select-none">Upper</label>
+            </div>
+
+            <!-- number variant -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+              <input type="checkbox" id="number" value="number" class="variant md:w-5 md:h-5 cursor-pointer" />
+              <label for="number" class="cursor-pointer select-none">Number</label>
+            </div>
+
+            <!-- Symbol variant -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+              <input type="checkbox" id="symbol" value="symbol" class="variant md:w-5 md:h-5 cursor-pointer" />
+              <label for="symbol" class="cursor-pointer select-none">Symbol</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="relative flex items-end w-full mt-2 md:mt-4 space-x-2 md:space-x-4">
+          <input
+            type="text"
+            readonly
+            id="password-output"
+            placeholder="waiting for you..."
+            class="block w-full h-8 md:h-10 mt-1 md:mt-2 focus:ring-opacity-0 focus:ring-offset-0"
+          />
+          <button
+            id="password-copy"
+            class="btn disabled bg-pink-500 text-white disabled:hover:bg-pink-500 hover:bg-pink-600"
+          >
+            <span class="sr-only">Copy to clipboard</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              />
+            </svg>
+          </button>
+          <div id="toast-copy" class="absolute right-0 -bottom-16 md:-bottom-20 opacity-0 transition-all duration-500">
+            <p class="toast info">Copied!</p>
+          </div>
+        </section>
+        <div class="relative w-full">
+          <div class="absolute left-1/2 top-4 -translate-x-1/2" id="toast-container"></div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
